@@ -1,0 +1,20 @@
+<section id="skills" class="mx-auto px-4 py-16 sm:py-24 bg-[#eaede7]">
+    <div class="flex flex-col gap-3 p-2 justify-center items-center">
+        <h1 [class]="styles.title">Technical Skills</h1>
+
+        <p [class]="styles.text">
+            My toolkit for building and exploring technology , from front-end to back-end, and into the world of AI.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div *ngFor="let skill of data" class="skill-card p-6 bg-neutral-50 rounded-lg text-center shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="icon mb-4 text-4xl text-blue-500">
+                    <!-- <img [src]="skill.icon">
+                     -->
+                </div>
+                <h2 class="text-xl font-semibold mb-2 text-[#1b3221]">{{ skill.name }}</h2>
+                <p class="text-[#677e7c]">{{ skill.description }}</p>
+            </div>
+        </div>
+    </div>
+</section>

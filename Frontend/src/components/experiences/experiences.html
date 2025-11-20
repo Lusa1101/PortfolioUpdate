@@ -1,0 +1,32 @@
+<section id="experience" class="bg-[#eaede7] mx-auto py-16 sm:py-24 px-4">
+    <div class="">
+        <div class="flex flex-col justify-center gap-3 p-2">
+            <h1 [class]="styles.title">My Journey</h1>
+
+            <p [class]="styles.text"> A timeline of my professional growth, academic achievements and hackathon experiences.</p>
+        </div>
+
+        <div>
+            <div *ngFor="let experience of experiences, let i = index" [class]="returnPosition(i)">
+                <!-- <div class="flex flex-row "> -->
+                    <div class="container flex flex-col items-center justify-center lg:gap-5 bg-neutral-50 rounded-lg w-2/5 lg:h-72 p-2 m-3">
+                        <div class="flex flex-row justify-center">
+                            <h1 class="text-[#1b3221] text-center text-lg font-bold">{{ experience.title }}</h1>
+                        </div>
+
+                        <div class="flex flex-col text-[#677e7c] lg:gap-5">
+                            <p class="rounded-lg p-1 font-medium text-[#1b3221] text-sm bg-[#85ad8f] hover:bg-[#9dbea4]">{{ experience.type }}</p>
+                            <p [class]="returnTextPosition(i)">{{ experience.location }}</p>
+                            <p [class]="returnTextPosition(i)">{{ experience.date }}</p>
+
+                            <p [class]="returnTextPosition(i)">{{ experience.description }}</p>
+                        </div>
+                    </div>
+
+                    <!-- <span [class]="returnStrokePosition(i)"></span>   -->
+                <!-- </div>              -->
+            </div>
+            
+        </div>
+    </div>
+</section>

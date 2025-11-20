@@ -1,0 +1,11 @@
+Portfolio Website -Angular
+
+Colors:
+1. Button/Link hover - #d3b464
+2. Button - #376743
+3. Title - #1b3221
+4. Text - #46594a
+5. Background - #f3f4f0
+6. Background 2 - #eaede7
+7. Logo name - #1b3221
+8. Footer copyright - #677e7c
