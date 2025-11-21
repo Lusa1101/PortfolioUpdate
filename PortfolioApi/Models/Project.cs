@@ -48,4 +48,10 @@ namespace Portfolio.Models
         [Column("file")]
         public string File { get; set; } = string.Empty;
     }
+
+    public class Techology
+    {
+        public string Name { get; set; } = string.Empty;
+        public int Count { get; set; } = 1;
+    }
 }

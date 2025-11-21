@@ -37,7 +37,8 @@ public class ProjectsController : ControllerBase
         try
         {
             var list = await _client.From<Project>().Get();
-            var cleanedProjects = list.Models.Select(p => new {
+            var cleanedProjects = list.Models.Select(p => new
+            {
                 p.Id,
                 p.Name,
                 p.Description,
@@ -48,7 +49,29 @@ public class ProjectsController : ControllerBase
                 // Add other needed fields
             }).ToList();
 
-            return Ok(cleanedProjects);
+            // Get all the tech stacks
+            List<Techology> techologies = new List<Techology>();
+            foreach (var techStack in cleanedProjects)
+            {
+                var currentStack = techStack.TechnologyStack.Trim().Split(",");
+                for (int i = 0; i < currentStack.Length; i++)
+                {
+                    //Add to @TechStack if does not yet added
+                    if(techologies.All(t => t.Name != currentStack[i].Trim()))
+                    {
+                        techologies.Add(new Techology { Name = currentStack[i].Trim(), Count = 1 });
+                    }
+                    else
+                    {
+                        var tech = techologies.Find(t => t.Name == currentStack[i].Trim());
+                        if (tech != null)
+                            tech.Count += 1;
+                    }
+                }
+            }
+
+
+            return Ok(new { Projects = cleanedProjects, TecknologyStack = techologies });
         }
         catch (Exception ex)
         {
