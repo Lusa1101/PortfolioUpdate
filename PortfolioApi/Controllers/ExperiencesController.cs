@@ -10,7 +10,9 @@ using Supabase;
 
 namespace Portfolio.Controllers
 {
-    public class ExperiencesController : Controller
+    [ApiController]
+    [Route("[controller]/[action]")]
+    public class ExperiencesController : ControllerBase
     {
         private readonly Client _client;
 
@@ -20,120 +22,119 @@ namespace Portfolio.Controllers
         }
 
         // GET: Experiences
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<IActionResult> GetExperiences()
         {
-            await Task.Delay(100000);
-            return NotFound();
-            /*
-            var list = await _client.From<Experience>().Get();
-            return View(list.Models);*/
+            try
+            {
+                var experiences = await _client.From<Experience>().Get();
+                var cleanedList = experiences.Models.Select(e => new
+                {
+                    e.Id,
+                    e.Name,
+                    e.Description,
+                    e.StartDate,
+                    e.EndDate
+                }).ToList();
+
+                if (experiences == null)
+                {
+                    return NotFound();
+                }
+
+                return Ok(cleanedList);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
-        // GET: Experiences/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // Get experience
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetExperienceById(int id)
         {
-            await Task.Delay(100000);
-            return NotFound();
-            /*if (id == null)
+            try
             {
-                return NotFound();
-            }
+                var list = await _client.From<Experience>()
+                    .Where(x => x.Id == id)
+                    .Get();
 
-            var experiences = await _client.From<Experience>().Get();
-            var experience = experiences.Models.FirstOrDefault(m => m.Id == id);
-            if (experience == null)
+                var cleanedList = list.Models.Select(e => new
+                {
+                    e.Id,
+                    e.Name,
+                    e.Description,
+                    e.StartDate,
+                    e.EndDate
+                }).ToList();
+
+                return Ok(cleanedList);
+            }
+            catch (Exception ex)
             {
-                return NotFound();
+                return BadRequest(ex.Message);
             }
-
-            return View(experience);*/
-        }
-
-        // GET: Experiences/Create
-        public IActionResult Create()
-        {
-            return View();
         }
 
         // POST: Experiences/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,StartDate,EndDate")] Experience experience)
+        public async Task<IActionResult> InsertExperience([Bind("Id,Name,Description,StartDate,EndDate")] Experience experience)
         {
-            await Task.Delay(100000);
-            return NotFound();
-            /*
-            if (ModelState.IsValid)
+            if (experience == null)
             {
-                await _client.From<Experience>().Insert(experience);
-                return RedirectToAction(nameof(Index));
+                return BadRequest("Experience is null.");
             }
-            return View(experience);*/
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var result = await _client.From<Experience>().Insert(experience);
+                    return Ok(nameof(result));
+                }
+                return Ok(experience);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
         // GET: Experiences/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            await Task.Delay(100000);
-            return NotFound();
-            /*
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var experiences = await _client.From<Experience>().Get();
-            var experience = experiences.Models.FirstOrDefault(m => m.Id == id);
-            if (experience == null)
-            {
-                return NotFound();
-            }
-            return View(experience);
-            */
-        }
-
-        // POST: Experiences/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPut]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,StartDate,EndDate")] Experience experience)
+        public async Task<IActionResult> UpdateExperience([Bind("Id,Name,Description,StartDate,EndDate")] Experience experience)
         {
-            await Task.Delay(100000);
-            return NotFound();
-            /*
-            if (id != experience.Id)
+            if (experience is null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            try
             {
-                try
-                {
-                    await _client.From<Experience>().Update(experience);
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ExperienceExists(experience.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                var exp = await _client.From<Experience>()
+                    .Where(e => e.Id == experience.Id)
+                    .Single();
+
+                if (exp == null)
+                    return BadRequest("The experience does not exist.");
+
+                exp.EndDate = experience.EndDate;
+                exp.Description = experience.Description;
+
+                return Ok(experience);
             }
-            return View(experience);*/
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
         // GET: Experiences/Delete/5
         [HttpDelete]
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> DeleteExperience(int? id)
         {
             if (id == null)
             {
@@ -142,12 +143,16 @@ namespace Portfolio.Controllers
 
             try
             {                
-                var experiences = await _client.From<Experience>().Get();
-                var experience = experiences.Models.FirstOrDefault(m => m.Id == id);
+                var experience = await _client.From<Experience>()
+                    .Where(e => e.Id == id)
+                    .Single();
+
                 if (experience == null)
                 {
                     return NotFound();
                 }
+
+                var result = await _client.From<Experience>().Delete(experience);
 
                 return Ok(experience);
             }

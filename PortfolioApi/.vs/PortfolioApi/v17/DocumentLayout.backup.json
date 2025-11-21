@@ -1,42 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\",
+  "WorkspaceRootPath": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioupdate\\portfolioapi\\controllers\\experiencescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:controllers\\experiencescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\services\\brevoemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:services\\brevoemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\controllers\\qualificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioupdate\\portfolioapi\\controllers\\qualificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:controllers\\qualificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\controllers\\referencescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:controllers\\referencescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioupdate\\portfolioapi\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\controllers\\projectimagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:controllers\\projectimagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioupdate\\portfolioapi\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|c:\\users\\omphu\\documents\\myportfolio\\portfolioapi\\controllers\\experiencescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88F8EF49-043D-CDC8-D483-C2C33EE93ACC}|PortfolioApi.csproj|solutionrelative:controllers\\experiencescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,111 +39,59 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProjectsController.cs",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\ProjectsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProjectsController.cs",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\ProjectsController.cs",
-              "RelativeToolTip": "Controllers\\ProjectsController.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAAAGEAAAAfAAAAAAAAAA==",
+              "Title": "QualificationsController.cs",
+              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\Controllers\\QualificationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QualificationsController.cs",
+              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\Controllers\\QualificationsController.cs",
+              "RelativeToolTip": "Controllers\\QualificationsController.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAYwEwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T08:23:08.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T08:29:29.772Z",
+              "WhenOpened": "2025-10-19T08:28:50.261Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ReferencesController.cs",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\ReferencesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReferencesController.cs",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\ReferencesController.cs",
-              "RelativeToolTip": "Controllers\\ReferencesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ExperiencesController.cs",
+              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\Controllers\\ExperiencesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ExperiencesController.cs",
+              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\Controllers\\ExperiencesController.cs",
+              "RelativeToolTip": "Controllers\\ExperiencesController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAAACwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T08:28:57.698Z"
+              "WhenOpened": "2025-10-19T08:28:17.233Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-19T08:33:53.894Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BrevoEmailService.cs",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Services\\BrevoEmailService.cs",
-              "RelativeDocumentMoniker": "Services\\BrevoEmailService.cs",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Services\\BrevoEmailService.cs",
-              "RelativeToolTip": "Services\\BrevoEmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T08:39:43.208Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "QualificationsController.cs",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\QualificationsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\QualificationsController.cs",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\QualificationsController.cs",
-              "RelativeToolTip": "Controllers\\QualificationsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T08:28:50.261Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProjectImagesController.cs",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\ProjectImagesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProjectImagesController.cs",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\ProjectImagesController.cs",
-              "RelativeToolTip": "Controllers\\ProjectImagesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T08:28:36.581Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ExperiencesController.cs",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\ExperiencesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ExperiencesController.cs",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\ExperiencesController.cs",
-              "RelativeToolTip": "Controllers\\ExperiencesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T08:28:17.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioApi\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAIcAAAAAAAAAAAAAAJ8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-19T07:27:00.279Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\Controllers\\ProjectsController.cs",
+              "RelativeToolTip": "Controllers\\ProjectsController.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAAHQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T08:23:08.168Z",
+              "EditorCaption": ""
             }
           ]
         }

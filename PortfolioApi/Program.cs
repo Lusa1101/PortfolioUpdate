@@ -1,6 +1,8 @@
 using Npgsql.EntityFrameworkCore;
 using Portfolio.Services;
+using Portfolio.Models;
 using Supabase;
+using Microsoft.OpenApi.Models;
 using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,12 +12,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add the user-secrets
+if (builder.Environment.IsDevelopment())
+{
+    // builder.Configuration.AddUserSecrets<Program>();
+    Debug.WriteLine("Loading secrets from secrets.json file for development.");
+    builder.Configuration.AddJsonFile("secrets.json", optional: true, reloadOnChange: true);
+}
+
 // Supabase Api
 try 
 {
-    var supabaseSection = builder.Configuration.GetSection("Supabase");
+    var supabaseSection = builder.Configuration
+        .GetSection("Supabase");
     var url = supabaseSection["BaseUrl"];
     var key = supabaseSection["ApiKey"];
+    
     var options = new SupabaseOptions
     {
         AutoRefreshToken = true,

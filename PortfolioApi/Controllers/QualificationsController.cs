@@ -29,7 +29,16 @@ namespace Portfolio.Controllers
             try
             {
                 var list = await _client.From<Qualification>().Get();
-                return Ok(list.Models);
+                var cleanedList = list.Models.Select(q => new
+                {
+                    q.Id,
+                    q.Name,
+                    q.Description,
+                    q.StartDate,
+                    q.EndDate
+                }).ToList();
+
+                return Ok(cleanedList);
             }
             catch ( Exception ex)
             {
@@ -51,14 +60,25 @@ namespace Portfolio.Controllers
             {
                 var qualification = await _client.From<Qualification>()
                     .Where(m => m.Id == id)
-                    .Single();
+                    .Get();
 
                 if (qualification == null)
                 {
                     return NotFound();
                 }
 
-                return Ok(qualification);
+                // Console.WriteLine($"Qualification: {qualification}");
+                var cleanedQual = qualification.Models.Select(qual => new
+                {
+                    qual.Id,
+                    qual.Name,
+                    qual.Description,
+                    qual.StartDate,
+                    qual.EndDate
+                }).ToList();
+                
+
+                return Ok(cleanedQual);
             }
             catch (Exception ex)
             {
