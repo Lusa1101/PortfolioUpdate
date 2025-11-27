@@ -6,9 +6,9 @@
             My toolkit for building and exploring technology , from front-end to back-end, and into the world of AI.
         </p>
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 mt-10">
-            <div *ngFor="let skill of data" class="skill-card p-2 bg-[#609e6d] rounded-4xl text-center shadow-sm hover:animate-pulse transition-shadow duration-300">
-                <h2 class="text-xl font-semibold mb-2 text-[#1b3221]">{{ skill.name }}</h2>
+        <div class="flex flex-wrap justify-center gap-8 mt-10">
+            <div *ngFor="let skill of skills" class="skill-card p-2 bg-[#609e6d] rounded-4xl text-center shadow-sm hover:animate-pulse transition-shadow duration-300">
+                <h2 class="text-xl font-semibold min-w-5 mb-2 text-[#1b3221]">{{ skill.name }}</h2>
                 <!-- <p class="text-[#677e7c]">{{ skill.description }}</p> -->
             </div>
         </div>

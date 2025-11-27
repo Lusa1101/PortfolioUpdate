@@ -8,24 +8,49 @@
             A selection of my work, showcasing my skills across different domains.
         </p>
 
-        <div class="container flex flex-row justify-center rounded bg-[#eaede7]">
+        <!-- <div class="container flex flex-row overflow-auto justify-center rounded bg-[#eaede7]">
             <div *ngFor="let domain of domains" class="flex flex-row py-2 px-3 gap-2.5">
                 <button class="bg-transparent hover:bg-neutral-50 hover text-[#677e7c] w-auto p-2 cursor-pointer rounded-lg">
                     {{ domain }}
                 </button>
             </div>
-        </div>
+        </div> -->
 
-        <div class="flex flex-col justify-center gap-12 p-5 m-5">
-            <div *ngFor="let project of projects" class="flex flex-col justify-center border border-[#677e7c] rounded-lg">
-                <img class="h-72 rounded-t-lg" src="https://wtoaxoehdtqtfggvbcjv.supabase.co/storage/v1/object/sign/project-images/CannabisStore3.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8wMjJiYjc2Yy1iMjJiLTRhNzItODc0Zi0zZWZjNWEzMDBiNmMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJwcm9qZWN0LWltYWdlcy9DYW5uYWJpc1N0b3JlMy5wbmciLCJpYXQiOjE3NTMxNjkyMDgsImV4cCI6MTc4NDcwNTIwOH0.kyLCy_dFPuwBqC35ofSZB9429PcDqLyBIPGjqPWYmJ4">
+        <div class="flex flex-col justify-center items-center gap-12 p-5 m-5">
+            <div *ngFor="let project of projects" class="flex flex-col container w-2/3 justify-center border border-[#677e7c] rounded-lg">
+                <img class="h-72 object-contain bg-[#bbb9b9] aspect-auto rounded-t-lg" [src]="filterImagesById(project.id)" alt="Project Image">
+
+                <!-- <div id="carousel" class="relative w-full" data-carousel="slide">
+                    <!-- Carousel Wrapper --
+                    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                        <!-- Slide 1 --
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img *ngFor="let image of filterImagesById(project.id); let i = index" [src]="image.file" class="h-72 object-contain bg-[#bbb9b9] aspect-auto rounded-t-lg" alt=`Slide {i + 1}`>
+                        </div>
+                    </div>
+                    <!-- Controls --
+                    <button data-carousel-prev class="absolute top-0 left-0 z-30 px-4">Prev</button>
+                    <button data-carousel-next class="absolute top-0 right-0 z-30 px-4">Next</button>
+                </div> -->
 
                 <div class="flex flex-col p-5 gap-2">
-                    <h1 class="text-[#1b3221] font-bold text-2xl font-sans">{{ project.title }}</h1>
+                    <h1 class="text-[#1b3221] font-bold text-2xl font-sans">{{ project.name }}</h1>
                     <p class="text-[#677e7c]">{{ project.description }}</p>
 
-                    <div class="flex flex-row gap-3">
-                        <p *ngFor="let tag of project.tags" class="rounded-2xl font-medium text-[#1b3221] bg-[#85ad8f] hover:bg-[#9dbea4] p-1 px-2">{{ tag }}</p>
+                    <div class="flex flex-wrap gap-3">
+                        <p *ngFor="let tag of project.technologyStack.trim().split(', ')" class="rounded-2xl font-medium text-[#1b3221] bg-[#85ad8f] hover:bg-[#9dbea4] p-1 px-2">{{ tag }}</p>
+                    </div>
+
+                    <div class="flex flex-row justify-center items-center mt-2.5">
+                        <span class="block h-0.5 w-3/4 bg-gray-300"></span>
+                    </div>
+
+                    <div *ngIf="project.githubUrl" class="flex flex-row justify-center items-center">
+                        <button class="hover:bg-[#376743] hover:text-white text-[#1b3221] border rounded-lg p-2 m-2 w-2/3 cursor-pointer">
+                            <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">
+                                View on GitHub
+                            </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -33,3 +58,9 @@
 
     </div>
 </section>
+
+<!-- <div *ngIf="showImage" class="fixed inset-0 bg-neutral-100 flex items-center justify-center mx-auto z-50">
+    <div class="max-w-md mx-auto rounded-lg">
+        <img [src]="selectedImage" alt="Project Image" class="w-full h-2/3 object-contain rounded-lg">
+    </div>
+</div> -->

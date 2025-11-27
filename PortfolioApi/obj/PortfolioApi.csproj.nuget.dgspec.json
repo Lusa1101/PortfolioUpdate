@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj": {}
+    "C:\\Users\\omphu\\Documents\\Current Projects\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj": {
+    "C:\\Users\\omphu\\Documents\\Current Projects\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj",
+        "projectUniqueName": "C:\\Users\\omphu\\Documents\\Current Projects\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj",
         "projectName": "PortfolioApi",
-        "projectPath": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj",
+        "projectPath": "C:\\Users\\omphu\\Documents\\Current Projects\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj",
         "packagesPath": "C:\\Users\\omphu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\obj\\",
+        "outputPath": "C:\\Users\\omphu\\Documents\\Current Projects\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

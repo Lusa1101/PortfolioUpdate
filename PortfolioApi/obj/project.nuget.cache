@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ry0kcWbQOIs=",
+  "dgSpecHash": "4MQ/0q3uW4c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\omphu\\Documents\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj",
+  "projectFilePath": "C:\\Users\\omphu\\Documents\\Current Projects\\MyPortfolio\\PortfolioUpdate\\PortfolioApi\\PortfolioApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\omphu\\.nuget\\packages\\bouncycastle.cryptography\\2.6.1\\bouncycastle.cryptography.2.6.1.nupkg.sha512",
     "C:\\Users\\omphu\\.nuget\\packages\\fubarcoder.restsharp.portable.core\\4.0.8\\fubarcoder.restsharp.portable.core.4.0.8.nupkg.sha512",

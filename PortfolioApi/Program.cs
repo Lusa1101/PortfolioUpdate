@@ -4,6 +4,7 @@ using Portfolio.Models;
 using Supabase;
 using Microsoft.OpenApi.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.HttpsPolicy;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +43,26 @@ catch (Exception ex)
     Debug.WriteLine($"Error while initializing Supabase client: {ex.Message}");
 }
 
+// Add CORS services
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularClients", policy =>
+    {
+        policy.WithOrigins(
+            "http://localhost:4200",
+            "https://afrowave.netlify.app"
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
+builder.Services.Configure<HttpsRedirectionOptions>(options =>
+{
+    options.HttpsPort = 7201;
+});
+
+
 //Mailkit
 builder.Services.AddTransient<MailKitSender>();
 
@@ -49,6 +70,10 @@ builder.Services.AddTransient<MailKitSender>();
 builder.Services.AddControllers();
 
 var app = builder.Build();
+
+// Use CORS before routing ["AllowAngularClients"]
+app.UseCors("AllowAngularClients");
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -11,7 +11,9 @@ using Supabase;
 
 namespace Portfolio.Controllers
 {
-    public class ProjectImagesController : Controller
+    [ApiController]
+    [Route("[Controller]/[action]")]
+    public class ProjectImagesController : ControllerBase
     {
         private readonly Client _client;
 
@@ -21,87 +23,114 @@ namespace Portfolio.Controllers
         }
 
         // GET: ProjectImages
-        public async Task<IActionResult> Index()
+        [HttpGet]
+        public async Task<IActionResult> GetProjectImages()
         {
-            await Task.Delay(100000);
-            return NotFound();
-            /*
-            var list = await _client.Storage.From("project-images").List();
-
-            Debug.WriteLine("Images");
-
-            List<ProjectImage> images = new();
-            if (list is null) return NoContent();
-            for (int i = 0; i < list.Count; i++)
+            try
             {
-                images[i].File = _client.Storage.From("project-images").GetPublicUrl($"public/{list[i].Name}");
+                //var list = await _client.Storage.From("project-images").List();
 
-                Debug.WriteLine( "Image:" + list[i].Name);
+                //Debug.WriteLine("Images");
+
+                //List<ProjectImage> images = new();
+                //if (list is null) return NoContent();
+                //for (int i = 0; i < list.Count; i++)
+                //{
+                //    images[i].File = _client.Storage.From("project-images").GetPublicUrl($"public/{list[i].Name}");
+
+                //    Console.WriteLine("Image:" + list[i].Name);
+                //}
+
+                var images = await _client.From<ProjectImage>()
+                    .Get();
+
+                var cleanedList = images.Models
+                    .Select(x => new
+                    {
+                        x.Id,
+                        x.ProjectId,
+                        x.File
+                    }).ToList();                    
+
+                if (cleanedList.Count == 0)
+                    return NoContent();
+
+
+                return Ok(cleanedList);
             }
-                
-
-            return View(images);*/
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error while getting project images: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
         }
 
-        // GET: ProjectImages/Details/5
-        public async Task<IActionResult> Details(int? id)
+        //
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetProjectImagesById(int? id)
         {
-            await Task.Delay(100000);
-            return NotFound();
-            /*
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id < 0 || id is null)
+                return BadRequest("Invalid project id");
 
-            var list = await _client.Storage.From("project-images").List();
-            if (list == null) 
-                return NotFound();
-            var projectImages = list.FirstOrDefault(m => m.Id == id.ToString());
-            if (projectImages == null)
+            try
             {
-                return NotFound();
-            }
+                var result = await _client.From<ProjectImage>()
+                    .Where(pi => pi.ProjectId == id)
+                    .Get();
 
-            return View(projectImages);*/
+                var cleanedList = result.Models
+                    .Select(pi => new
+                    {
+                        pi.Id,
+                        pi.ProjectId,
+                        pi.File
+                    });
+
+                if (result is null || result.Models.Count == 0)
+                    return NotFound("No images found for the specified project id");
+
+                return Ok(cleanedList);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error while getting project images by id: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
         }
 
         // GET: ProjectImages/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ProjectImages/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ProjectId,Image")] ProjectImage projectImage)
+        public async Task<IActionResult> InsertProjectImage([Bind("Id,ProjectId,Image")] ProjectImage projectImage)
         {
-            await Task.Delay(100000);
-            return NotFound();
-            /*
-            if (projectImage.Image == null)
-                return NotFound();
-
-            var imagePath = projectImage.Image.FileName;
-            projectImage.File = imagePath;
-
-            if (ModelState.IsValid)
+            try
             {
-                //Add to the bucket first
-                string result = await _client.Storage
-                  .From("project-images")
-                  .Upload(projectImage.Image.FileName, projectImage.Image.Name);
+                if (projectImage.File == null)
+                    return NotFound();
 
-                //On success, add metadata to the db
-                await _client.From<ProjectImage>().Insert(projectImage);
-                
-                return RedirectToAction(nameof(Index));
+                var imagePath = projectImage.File;
+                projectImage.File = imagePath;
+
+                if (ModelState.IsValid)
+                {
+                    //Add to the bucket first
+                    string result = await _client.Storage
+                      .From("project-images")
+                      .Upload(projectImage.File, projectImage.File);
+
+                    //On success, add metadata to the db
+                    await _client.From<ProjectImage>().Insert(projectImage);
+
+                    return RedirectToAction(nameof(Index));
+                }
+
+                return Ok(projectImage);
             }
-            
-            return View(projectImage);*/
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while inserting project image: ", ex.Message);
+                return BadRequest(ex.Message);
+            }
         }
 
         //file picker

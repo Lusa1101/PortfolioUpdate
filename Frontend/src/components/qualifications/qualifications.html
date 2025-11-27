@@ -1,19 +1,22 @@
 <section id="qualifications" class="mx-auto px-4 py-16 sm:py34">
-    <div class="flex flex-col justify-center items-center gap-2 p-2">
+    <div class="flex flex-col  gap-2 p-2">
         <h1 [class]="styles.title">Qualifications & Certifications</h1>
 
         <p [class]="styles.text">My formal education and professional certificates.</p>
 
-        <div *ngFor="let qualification of qualifications" class="flex flex-col rounded-lg shadow-md bg-neutral-50 container gap-2 m-2 p-5">
-            <h1 class="font-bold text-lg text-[#1b3221]">{{ qualification.name }}</h1>
-            <p class="text-[#677e7c]">{{ qualification.issuer }}</p>
-            <p class="text-[#46594a]">{{ qualification.date }}</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-2 p-5 m-5">
+            <div *ngFor="let qualification of qualifications" class="flex flex-col rounded-lg shadow-md bg-neutral-50 container gap-2 m-2 p-5">
+                <h1 class="font-bold text-lg text-[#1b3221]">{{ qualification.title }}</h1>
+                <p class="text-[#677e7c]">{{ qualification.issuer }}</p>
+                <p class="text-[#46594a]">{{ qualification.issueDate | date:'MMM, y'}}</p>
 
-            <div class="flex justify-center items-center text-white">
-                <button class="bg-[#376743] hover:bg-[#58835e] cursor-pointer min-w-full rounded-lg p-2">
-                    Download Certificate
-                    <i class="bx bx-download"></i>
-                </button>
+                <div class="flex justify-center items-center text-white">
+                    <button class="bg-[#376743] hover:bg-[#58835e] cursor-pointer min-w-full rounded-lg p-2">
+                        <a [href]="qualification.verificationLink" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center gap-2">
+                            View Certificate
+                        </a>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

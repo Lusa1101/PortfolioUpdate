@@ -71,7 +71,7 @@ public class ProjectsController : ControllerBase
             }
 
 
-            return Ok(new { Projects = cleanedProjects, TecknologyStack = techologies });
+            return Ok(new { Projects = cleanedProjects, TechnologyStack = techologies });
         }
         catch (Exception ex)
         {
